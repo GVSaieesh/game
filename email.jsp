@@ -13,7 +13,7 @@
         ps.setString(1, email);
         ResultSet rs = ps.executeQuery();
 
-        //int count = 0;
+        int count = 0;
         if (rs.next()) {
             count = rs.getInt(1);  
         }
