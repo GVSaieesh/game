@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="newpass.jsp" method="post" onsubmit="return check()">
+        <label>Enter your new password:</label>
+        <input type="password" name="password1" id ="pass1"><br><br>
+        <label>
+          Confirm password:
+        </label>
+        <input type="password" name="password2" id="pass2"><br><br>
+        <button type="submit" >submit</button>
+        
+    </form>
+    <script>
+        function check()
+        {
+            n1=document.getElementById("pass1").value;
+            n2=document.getElementById("pass2").value;
+
+            if(n1==n2)
+            {
+                return true;
+            }
+            else
+            {
+                alert("Passwords do not match!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

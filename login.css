@@ -1,0 +1,91 @@
+.menu {
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    height: 700px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.673);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.marvel-logo {
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.logindetails {
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: rgba(40, 34, 34, 0.673);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.email, .pass {
+    width: 280px;
+    padding: 15px;
+    background-color: rgb(219, 213, 207);
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 10px; /* Added spacing */
+}
+
+.submit {
+    width: 280px;
+    padding: 15px;
+    background-color: red;
+    border-radius: 30px;
+    color: white;
+    margin-top: 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit:hover {
+    background: darkred;
+}
+
+body {
+    position: relative;
+    background-image: url("best-pc-games-graphics-2023.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Covers full screen even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.505); /* Adjust for darker or lighter effect */
+    z-index: 0; /* Keeps it behind other content */
+}
+
+.menu, .logindetails {
+    position: relative;
+    z-index: 1; /* Ensures content appears above the black overlay */
+}
+
+
+h3 {
+    color: black;
+}

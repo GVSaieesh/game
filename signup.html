@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.sql.*" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="menu">
+
+        <div class="logo">
+            <img class="marvel-logo" src="Logo.png" alt="littlelemon">       
+         </div>
+
+
+        <div class="logindetails">
+             <form name = "login" action="check.jsp" method="post">
+                 <h2 style="color: white;">Enter you email address:</h2>
+                 <input class="email" type="email" name="email"/>
+                 <h2 style="color: white;">Enter Password:</h2>
+                 <input class="pass" type="password" name="password"/>
+                 <br>
+                 <h2 style="color: white;">Confirm Password:</h2>
+                 <input class="pass" type="password" name="cpassword"/>
+                 <br>
+                 <button class="submit" type="submit">Register</button> 
+                 <br>   
+                 <hr>
+
+                 <a href="login.html">already have account</a>
+                 
+                 
+                 
+         </form>
+        </div>
+
+    </div>
+    
+   
+</body>
+</html>
