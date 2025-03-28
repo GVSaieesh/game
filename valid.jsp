@@ -24,7 +24,7 @@
               if(password1.equals(Stpassword))
               {
                   session.setAttribute("uemail", email1);
-                  response.sendRedirect("menu.html");
+                  response.sendRedirect("dupmenu.jsp");
               }
               else
               {

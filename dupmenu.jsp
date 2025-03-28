@@ -129,7 +129,7 @@
             <ul class="nav-links">
                 <li><a href="home.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="menu.jsp">Menu</a></li>
+                <li><a href="dupmenu.jsp">Menu</a></li>
                 <li><a href="book.jsp">Book</a></li>
                 <li><a href="orderhis.jsp">Order-History</a></li>
             </ul>
@@ -144,6 +144,7 @@
         <div class="menu-grid">
             <%
                 try {
+                    String email = (String) session.getAttribute("uemail");
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/littlelemon", "root", "");
                     Statement stmt = con.createStatement();
@@ -152,12 +153,12 @@
                     int count = 0;
                     while (rs.next()) {
                         String gname = rs.getString("name");
-                        String gimage = rs.getString("image");
+                        String gimage = rs.getString("image1");
                         int gprice = rs.getInt("price");
 
-                        if (count % 4 == 0) {
+                        if (count % 4 == 0 && count != 0) { 
             %>
-                            <div class="w-100"></div> <!-- Forces a new row after every 4 items -->
+            </div><div class="menu-grid">
             <%
                         }
             %>
@@ -168,7 +169,26 @@
                         <div class="price-tag">
                             <span class="current-price">$<%= gprice %></span>
                         </div>
-                        <a href="item.jsp?name=<%= gname %>" class="buy-button">Order Now</a>
+                        <%
+                          PreparedStatement pst = con.prepareStatement("SELECT name FROM orders WHERE email=?");
+                          pst.setString(1, email);
+                          ResultSet rst = pst.executeQuery();
+                          boolean alreadyBought = false;
+
+                          while (rst.next()) {
+                              String mname = rst.getString("name");
+                              if (mname.equals(gname)) {
+                                  alreadyBought = true;
+                                  break;
+                              }
+                          }
+                          
+                        %>
+                        <a href="item.jsp?mname=<%= gname %>&alreadyBought=<%= alreadyBought %>" 
+                            class="buy-button">
+                            <%= alreadyBought ? "Already bought" : "Order Now" %>
+                         </a>
+                         
                     </div>
                 </div>
             <%

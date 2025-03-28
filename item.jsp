@@ -105,7 +105,7 @@ body {
             <ul class="nav-links">
                 <li><a href="home.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="menu.jsp">Menu</a></li>
+                <li><a href="dupmenu.jsp">Menu</a></li>
                 <li><a href="book.jsp">Book</a></li>
                 <li><a href="orderhis.jsp">Order-History</a></li>
             </ul>
@@ -118,8 +118,12 @@ body {
 
         <%
                
-                String name1=request.getParameter("name");
-                
+        
+        String name1 = request.getParameter("mname");
+        boolean alreadyBought = Boolean.parseBoolean(request.getParameter("alreadyBought"));
+        
+    
+
                 String url="jdbc:mysql://localhost:3306/littlelemon";
                 String user="root";
                 String password="";
@@ -140,8 +144,18 @@ body {
                            
                             <p><%=rs.getString("description")%></p>
                              <p>Price:$<%=rs.getString("price")%></p>
-                             <input class="btnn" type="button" value="Order Now" onclick="Order()">
+                        <% 
+                           if(!alreadyBought)
+                           {
+                            %>
+                            <input class="btnn" type="button" value="Order Now" onclick="Order()">
+                            <%
+                           }
+                           else
+                           {
 
+                           }
+                         %>
                           </div>
                 <%
                       }

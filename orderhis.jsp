@@ -141,7 +141,7 @@
             <ul class="nav-links">
                 <li><a href="home.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
+                <li><a href="dupmenu.jsp">Menu</a></li>
                 <li><a href="book.jsp">Book</a></li>
                 <li><a href="orderhis.jsp">Order-History</a></li>
             </ul>
