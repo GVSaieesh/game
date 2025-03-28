@@ -99,7 +99,7 @@ body {
 
 <body >
     <header class="header">
-        <img src="Logo.png" alt="Little Lemon Logo" style="width: 65px; height: 70px; border-radius: 8px;">
+        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 65px; height: 70px; border-radius: 8px;">
         <!-- <input type="text" class="search-bar" placeholder="Search menu..."> -->
         <nav>
             <ul class="nav-links">
@@ -107,7 +107,7 @@ body {
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="menu.jsp">Menu</a></li>
                 <li><a href="book.jsp">Book</a></li>
-                <li><a href="order.jsp">Order-History</a></li>
+                <li><a href="orderhis.jsp">Order-History</a></li>
             </ul>
         </nav>
     </header>
@@ -140,7 +140,8 @@ body {
                            
                             <p><%=rs.getString("description")%></p>
                              <p>Price:$<%=rs.getString("price")%></p>
-                            <input  class="btnn" type="submit" value="Order Now">
+                             <input class="btnn" type="button" value="Order Now" onclick="Order()">
+
                           </div>
                 <%
                       }
@@ -156,5 +157,11 @@ body {
                   
              
     </div>
+    <script>
+        function Order() {
+            let n1 = "<%= name1 %>";
+            window.location.href = "order.jsp?name=" + encodeURIComponent(n1);
+        }
+    </script>
 </body>
 </html>

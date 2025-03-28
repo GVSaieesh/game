@@ -23,7 +23,8 @@
               String Stpassword=rs.getString("password");
               if(password1.equals(Stpassword))
               {
-                  response.sendRedirect("menu.jsp");
+                  session.setAttribute("uemail", email1);
+                  response.sendRedirect("menu.html");
               }
               else
               {
