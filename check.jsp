@@ -14,7 +14,7 @@
     
    if(!password.equals(cpassword))
    {
-    out.println("<script>alert('confirm password is not same as password!'); window.location.href='signup.jsp';</script>");
+    out.println("<script>alert('confirm password is not same as password!'); window.location.href='signup.html';</script>");
     return;
    }
  
@@ -31,13 +31,13 @@
      if(m>0)
      {
        
-         out.println("<script>alert('Registered!'); window.location.href='login.jsp';</script>");
+         out.println("<script>alert('Registered!'); window.location.href='login.html';</script>");
      }
 
  
      
      else{
-         out.println("<script>alert('Email not registered!'); window.location.href='signup.jsp';</script>");
+         out.println("<script>alert('Email not registered!'); window.location.href='signup.html';</script>");
 
      }
     
