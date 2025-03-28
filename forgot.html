@@ -3,26 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style rel="stylesheet" href="login.css"></style>
-    
+    <title>Little Lemon Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+    position: relative;
+    background-image: url('images/assas.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Overlay to dim the background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5 = 50% dim) */
+    z-index: -1; /* Keeps it behind all content */
+}
+
+
+        .menu {
+            background: rgba(214, 208, 208, 0.407);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .marvel-logo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .marvel-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logindetails {
+            padding: 20px 0;
+        }
+
+        h2 {
+            color: #000000;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .email {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .email:focus {
+            outline: none;
+            border-color: #495E57;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #495E57;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: #F4CE14;
+            color: #333;
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                padding: 20px;
+            }
+
+            .marvel-logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="menu">
-
         <div class="logo">
-            <img class="marvel-logo" src="newlogo1.jpg" alt="littlelemon" width="200px" height="200px"/>
+            <img class="marvel-logo" src="images/Logo.png" alt="littlelemon" width="200" height="200"/>
         </div>
-
-      
         <div class="logindetails">
-             <form name = "login" action="email.jsp" method="post">
-                 <h2>Enter you email address:</h2>
-                 <input class="email" type="email" name="email"/>    
-                 <button type="submit">submit</button>
-         </form>
+            <form name="login" action="email.jsp" method="post">
+                <h2>Enter your email address:</h2>
+                <input class="email" type="email" name="email" placeholder="Enter your email" required/>    
+                <button type="submit">Submit</button>
+            </form>
         </div>
-
     </div>
 </body>
 </html>
