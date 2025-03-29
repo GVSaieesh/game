@@ -124,7 +124,7 @@
 <body>
     <header class="header">
         <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 70px; height: 70px; border-radius: 8px;">
-        <input type="text" class="search-bar" placeholder="Search menu...">
+        <input type="text" id="search" class="search-bar" placeholder="Search menu...">
         <nav>
             <ul class="nav-links">
                 <li><a href="home.jsp">Home</a></li>
@@ -169,26 +169,6 @@
                         <div class="price-tag">
                             <span class="current-price">$<%= gprice %></span>
                         </div>
-                        <%
-                          PreparedStatement pst = con.prepareStatement("SELECT name FROM orders WHERE email=?");
-                          pst.setString(1, email);
-                          ResultSet rst = pst.executeQuery();
-                          boolean alreadyBought = false;
-
-                          while (rst.next()) {
-                              String mname = rst.getString("name");
-                              if (mname.equals(gname)) {
-                                  alreadyBought = true;
-                                  break;
-                              }
-                          }
-                          
-                        %>
-                        <a href="item.jsp?mname=<%= gname %>&alreadyBought=<%= alreadyBought %>" 
-                            class="buy-button">
-                            <%= alreadyBought ? "Already bought" : "Order Now" %>
-                         </a>
-                         
                     </div>
                 </div>
             <%
@@ -201,5 +181,55 @@
             %>
         </div>
     </main>
+
+    <%-- <script>
+        const product = [
+            { id: 0, Image: "images/1.jpg", title: "MARVEL SPIDER-MAN-2", price: 11 },
+            { id: 1, Image: "images/2.jpg", title: "Resident Evil 4 REMAKE", price: 12 },
+            { id: 2, Image: "images/3.jpg", title: "ELDEN RING", price: 9 },
+            { id: 3, Image: "images/4.jpg", title: "GOD OF WAR", price: 7 }
+        ];
+
+        const categories = [...new Set(product.map((item) => item))];
+
+            document.getElementById("search").addEventListener("keyup", function (e) {
+            const searchData = e.target.value.toLowerCase();
+            const menuCards = document.querySelectorAll(".menu-card");
+
+            menuCards.forEach(card => {
+                const title = card.querySelector(".menu-title").textContent.toLowerCase();
+                card.style.display = title.includes(searchData) ? "block" : "none";
+            });
+        });
+
+
+        const displayItem = (items) => {
+            document.getElementById("root").innerHTML = items.map((item) => `
+                <div class="box">
+                    <div class="img-box">
+                        <img class='images' src="${item.Image}" />
+                    </div>
+                    <div class="bottom">
+                        <p>${item.title}</p>
+                        <h2>$${item.price}.00</h2>
+                        <button class="buy">Buy Now</button>
+                    </div>
+                </div>`).join('');
+        };
+        
+        displayItem(categories);
+    </script> --%>
+    <script>
+    document.getElementById("search").addEventListener("keyup", function (e) {
+        const searchData = e.target.value.toLowerCase();
+        const menuCards = document.querySelectorAll(".menu-card");
+
+        menuCards.forEach(card => {
+            const title = card.querySelector(".menu-title").textContent.toLowerCase();
+            card.style.display = title.includes(searchData) ? "block" : "none";
+        });
+    });
+</script>
+
 </body>
 </html>
