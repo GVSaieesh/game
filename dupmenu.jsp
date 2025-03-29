@@ -141,7 +141,7 @@
             <h2>Featured Menu Items</h2>
         </div>
 
-        <div class="menu-grid">
+        <div style="margin:10px" class="menu-grid">
             <%
                 try {
                     String email = (String) session.getAttribute("uemail");
@@ -182,54 +182,23 @@
         </div>
     </main>
 
-    <%-- <script>
-        const product = [
-            { id: 0, Image: "images/1.jpg", title: "MARVEL SPIDER-MAN-2", price: 11 },
-            { id: 1, Image: "images/2.jpg", title: "Resident Evil 4 REMAKE", price: 12 },
-            { id: 2, Image: "images/3.jpg", title: "ELDEN RING", price: 9 },
-            { id: 3, Image: "images/4.jpg", title: "GOD OF WAR", price: 7 }
-        ];
-
-        const categories = [...new Set(product.map((item) => item))];
-
-            document.getElementById("search").addEventListener("keyup", function (e) {
-            const searchData = e.target.value.toLowerCase();
-            const menuCards = document.querySelectorAll(".menu-card");
-
-            menuCards.forEach(card => {
-                const title = card.querySelector(".menu-title").textContent.toLowerCase();
-                card.style.display = title.includes(searchData) ? "block" : "none";
-            });
-        });
-
-
-        const displayItem = (items) => {
-            document.getElementById("root").innerHTML = items.map((item) => `
-                <div class="box">
-                    <div class="img-box">
-                        <img class='images' src="${item.Image}" />
-                    </div>
-                    <div class="bottom">
-                        <p>${item.title}</p>
-                        <h2>$${item.price}.00</h2>
-                        <button class="buy">Buy Now</button>
-                    </div>
-                </div>`).join('');
-        };
-        
-        displayItem(categories);
-    </script> --%>
-    <script>
+    
+   <script>
     document.getElementById("search").addEventListener("keyup", function (e) {
-        const searchData = e.target.value.toLowerCase();
-        const menuCards = document.querySelectorAll(".menu-card");
+    const searchData = e.target.value.toLowerCase();
+    const menuCards = document.querySelectorAll(".menu-card");
 
-        menuCards.forEach(card => {
-            const title = card.querySelector(".menu-title").textContent.toLowerCase();
-            card.style.display = title.includes(searchData) ? "block" : "none";
-        });
-    });
+    for (let i = 0; i < menuCards.length; i++) {
+        const title = menuCards[i].querySelector(".menu-title").textContent.toLowerCase();
+        
+        if (title.includes(searchData)) {
+            menuCards[i].style.display = "block";
+        } else {
+            menuCards[i].style.display = "none";
+        }
+    }
+});
+
 </script>
-
 </body>
 </html>
