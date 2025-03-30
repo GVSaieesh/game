@@ -103,11 +103,13 @@ body {
         <!-- <input type="text" class="search-bar" placeholder="Search menu..."> -->
         <nav>
             <ul class="nav-links">
-                <li><a href="home.jsp">Home</a></li>
+                <%-- <li><a href="home.jsp">Home</a></li> --%>
                 <li><a href="about.jsp">About</a></li>
                 <li><a href="dupmenu.jsp">Menu</a></li>
-                <li><a href="book.jsp">Book</a></li>
+                <%-- <li><a href="book.jsp">Book</a></li> --%>
                 <li><a href="orderhis.jsp">Order-History</a></li>
+                <li><a href="login.html">login</a></li>
+
             </ul>
         </nav>
     </header>

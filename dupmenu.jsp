@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Lemon - Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
             margin: 0;
@@ -22,6 +23,7 @@
 
         .header {
             background-color: #202020;
+            /* position: fixed; */
             padding: 1rem 2rem;
             display: flex;
             align-items: center;
@@ -29,16 +31,19 @@
         }
 
         .search-bar {
-            background-color: #2a2a2a;
+            background-color:rgb(40, 34, 34);
             border: none;
             padding: 0.75rem 1rem;
             color: white;
-            border-radius: 4px;
-            width: 300px;
+            border-radius: 10px;
+            width: 500px;
+            height: 50px;
+            font-size:20px;
         }
 
         .nav-links {
             display: flex;
+            right: 0;
             gap: 2rem;
             list-style: none;
         }
@@ -51,6 +56,7 @@
 
         .featured {
             padding: 2rem;
+            /* margin-left:20px;margin-right:20px; */
         }
 
         .section-title {
@@ -73,6 +79,7 @@
             overflow: hidden;
             transition: transform 0.2s;
             width: 23%;
+            margin-bottom:15px;
         }
 
         .menu-card:hover {
@@ -119,22 +126,31 @@
         .buy-button:hover {
             background-color: #0066cc;
         }
+
+        .checked{
+            color:orange;
+        }
     </style>
 </head>
 <body>
-    <header class="header">
-        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 70px; height: 70px; border-radius: 8px;">
-        <input type="text" id="search" class="search-bar" placeholder="Search menu...">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="home.jsp">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="dupmenu.jsp">Menu</a></li>
-                <li><a href="book.jsp">Book</a></li>
-                <li><a href="orderhis.jsp">Order-History</a></li>
-            </ul>
-        </nav>
-    </header>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background-color: #121212;" class="header">
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 80px; height: 80px; border-radius: 8px;">
+        <img src="images/red.png" alt="Red Mask Games" style="width: 180px; height: 80px; border-radius: 8px;">
+        <input type="text" id="search" class="search-bar" placeholder="Search menu..." style="margin-left: 20px;">
+    </div>
+
+    <nav>
+        <ul class="nav-links" style="display: flex; align-items: center; gap: 40px; list-style: none; margin-right: 20px;">
+            <li><a href="about.jsp">About</a></li>
+            <li><a href="dupmenu.jsp">Menu</a></li>
+            <li><a href="orderhis.jsp">Order-History</a></li>
+            <li><a style="border: 1px solid #0074e4; padding: 10px 20px; background-color: #0074e4; color: white; border-radius: 10px;" href="login.html">Log Out</a></li>
+        </ul>
+    </nav>
+</header>
+
+
 
     <main class="featured">
         <div class="section-title">
@@ -184,11 +200,19 @@
                           }
                           
                         %>
-                        <a href="item.jsp?mname=<%= gname %>&alreadyBought=<%= alreadyBought %>" 
+                        <div style="display: flex; align-items:center;align-content:center; gap:50px;">
+                          <a href="item.jsp?mname=<%= gname %>&alreadyBought=<%= alreadyBought %>" 
                             class="buy-button">
                             <%= alreadyBought ? "Already bought" : "Order Now" %>
                          </a>
-                         
+                         <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                         </div>
+                        </div>
                     </div>
                 </div>
             <%

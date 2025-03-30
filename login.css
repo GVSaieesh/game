@@ -1,91 +1,105 @@
-.menu {
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 10px;
-    height: 700px;
-    width: 400px;
-    background-color: rgba(0, 0, 0, 0.673);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
 
-.marvel-logo {
-    width: auto;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.logindetails {
-    border: 1px solid white;
-    border-radius: 20px;
-    background-color: rgba(40, 34, 34, 0.673);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.email, .pass {
-    width: 280px;
-    padding: 15px;
-    background-color: rgb(219, 213, 207);
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    margin-bottom: 10px; /* Added spacing */
-}
-
-.submit {
-    width: 280px;
-    padding: 15px;
-    background-color: red;
-    border-radius: 30px;
-    color: white;
-    margin-top: 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.submit:hover {
-    background: darkred;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    position: relative;
-    background-image: url("best-pc-games-graphics-2023.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a1a2e, #16213e, #0f3460);
 }
 
-body::before {
-    content: "";
-    position: fixed; /* Covers full screen even when scrolling */
-    top: 0;
-    left: 0;
+
+.menu {
+    width: 400px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    text-align: center;
+}
+
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.marvel-logo {
+    width: 150px;
+}
+
+/* Form Styling */
+h2 {
+    font-size: 16px;
+    color: #00ffff;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Stylish Input Fields */
+input {
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.505); /* Adjust for darker or lighter effect */
-    z-index: 0; /* Keeps it behind other content */
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    border-bottom: 2px solid #00ffff;
+    transition: 0.3s;
 }
 
-.menu, .logindetails {
-    position: relative;
-    z-index: 1; /* Ensures content appears above the black overlay */
+input:focus {
+    border-bottom: 2px solid #ff4b2b;
 }
 
 
-h3 {
-    color: black;
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+    box-shadow: 0px 5px 15px rgba(255, 75, 43, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(255, 75, 43, 0.8);
+}
+
+
+a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ff4b2b;
+    text-decoration: underline;
+}
+
+/* Horizontal Line */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
 }
