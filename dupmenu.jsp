@@ -141,7 +141,7 @@
             <h2>Featured Menu Items</h2>
         </div>
 
-        <div style="margin:10px" class="menu-grid">
+        <div class="menu-grid">
             <%
                 try {
                     String email = (String) session.getAttribute("uemail");
@@ -169,6 +169,26 @@
                         <div class="price-tag">
                             <span class="current-price">$<%= gprice %></span>
                         </div>
+                        <%
+                          PreparedStatement pst = con.prepareStatement("SELECT name FROM orders WHERE email=?");
+                          pst.setString(1, email);
+                          ResultSet rst = pst.executeQuery();
+                          boolean alreadyBought = false;
+
+                          while (rst.next()) {
+                              String mname = rst.getString("name");
+                              if (mname.equals(gname)) {
+                                  alreadyBought = true;
+                                  break;
+                              }
+                          }
+                          
+                        %>
+                        <a href="item.jsp?mname=<%= gname %>&alreadyBought=<%= alreadyBought %>" 
+                            class="buy-button">
+                            <%= alreadyBought ? "Already bought" : "Order Now" %>
+                         </a>
+                         
                     </div>
                 </div>
             <%
