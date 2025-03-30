@@ -206,11 +206,21 @@
                             <%= alreadyBought ? "Already bought" : "Order Now" %>
                          </a>
                          <div>
+
+                    <!-- while(count>0)
+                    {
+                        if(rating==rs.getInt(rating))
+                        {
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
+                        }
+                        else
+                        {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
+                        }
+                    } -->
                          </div>
                         </div>
                     </div>
