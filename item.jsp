@@ -33,6 +33,10 @@ body {
     align-items: flex-start; /* Align content to the left */
     text-align: left; /* Ensure text aligns to the left */
     padding: 20px;
+    /* border: 1px solid rgba(0, 255, 255, 0.3); */
+    border-radius:10px;
+    box-shadow: 0 0 1px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+
 }
 
 .header {
@@ -65,13 +69,14 @@ body {
         }
     .gamedet{
     margin: 100px;
-    background-color: #202020;
+    background: linear-gradient(145deg, #1a1a1a, #202020);
     color: white;
-        /* display: flex; */
     padding: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+    
     }
     .btnn {
     display: inline-block;
@@ -86,6 +91,7 @@ body {
     align-self: flex-start;
     font-size: 1.2rem; 
     font-weight: bold; 
+    
 }
 
 
@@ -93,6 +99,7 @@ body {
     width: 300px;
     height: 400px;
     border: 10px solid white;
+    
 }
 
 </style>
@@ -104,11 +111,11 @@ body {
         <nav>
             <ul class="nav-links">
                 <%-- <li><a href="home.jsp">Home</a></li> --%>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="dupmenu.jsp">Menu</a></li>
+                <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="about.html">About</a></li>
+                <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="dupmenu.jsp">Menu</a></li>
                 <%-- <li><a href="book.jsp">Book</a></li> --%>
-                <li><a href="orderhis.jsp">Order-History</a></li>
-                <li><a href="login.html">login</a></li>
+                <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="orderhis.jsp">Order-History</a></li>
+                <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="login.html">login</a></li>
 
             </ul>
         </nav>
@@ -142,10 +149,15 @@ body {
                         <div class="pht">
                             <img style="width:300px;height:400px;border-radius: 20px; border: 5px solid #202020;" src="<%=rs.getString("image")%>" alt="">
                          </div>
+                         <div class="ytlink">
+                            <p style="font-weight: bold;">TRAILER:</p>
+                            <iframe style="border-radius:10px;" width="560" height="315" src="https://www.youtube.com/embed/<%= rs.getString("ytlink") %>" frameborder="0" allowfullscreen> </iframe>
+                          </div>
                          <div class="description">
-                           
+                            <p style="font-weight: bold;">Game Description:</p>
                             <p><%=rs.getString("description")%></p>
-                             <p>Price:$<%=rs.getString("price")%></p>
+                             <p>Price:₹<%=rs.getString("price")%></p>
+                            
                         <% 
                            if(!alreadyBought)
                            {
@@ -158,7 +170,9 @@ body {
 
                            }
                          %>
+                        
                           </div>
+                          
                 <%
                       }
                       rs.close();

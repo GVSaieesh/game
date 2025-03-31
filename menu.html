@@ -1,326 +1,153 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Lemon - Menu</title>
-    <link rel="stylesheet" href="s1.css">
-</head>
-<body>
-   
-    <div class="logo" >
-            <img style="   border-radius: 10px;" src="newlogo1.jpg" alt="Little Lemon Logo" style="width: 120px;height: 100px;">
-            <h1>LITTLE  LEMON</h1>
-    </div>
-    <nav>
-        <ul>
-                <li><a href="home.jsp">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="menu.jsp">Menu</a></li>
-                <li><a href="book.jsp">Book</a></li>
-        </ul>
-    </nav>
-    <div style="background-image: url('back.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;">
-        <p style="font-size: 70px;font-weight: bold; justify-content: center; font-family: Garamond,serif; color: rgb(244, 0, 0);"; class="Menu">Menu</p>
-
-        <main class="main1">
-            <div class="div1">
-                <div class="menu-item">
-                    <a class="alink" href="items.jsp?name=Bruschetta">Bruschetta</a>
-        
-                    <p class="sizing">$11.00</p>
-                </div>
-                <div class="menu-item">
-                    <a class="alink" href="items.jsp?name=Greensalad">Green salad</a>
-                    <p class="sizing">$12.00</p>
-                </div>
-            </div>
-
-            <div class="div2">
-                <div class="menu-item">
-                    <a class="alink" href="items.jsp?name=Grilledfish">Grilled fish</a>
-                    <p class="sizing">$9.00</p>
-                </div>
-                <div class="menu-item">
-                    <a class="alink" href="items.jsp?name=Lemondessert">Lemon dessert</a>
-                    <p class="sizing">$7.00</p>
-                </div>
-            </div>
-            
-        </main>
-
-    </div>
+<style>
+    @keyframes neonPulse {
+        0% { box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
+        50% { box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; }
+        100% { box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
+    }
     
-
-    <footer>
-        <div class="footer-content">
-            <img style="   border-radius: 10px;" src="newlogo1.jpg" alt="Little Lemon Logo">
-            <p>Copyright Little Lemon</p>
-        </div>
-    </footer>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Lemon - Menu</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        body {
-            background-color: #121212;
-            color: white;
-        }
-
-        .header {
-            background-color: #202020;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .search-bar {
-            background-color: #2a2a2a;
-            border: none;
-            padding: 0.75rem 1rem;
-            color: white;
-            border-radius: 4px;
-            width: 300px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .featured {
-            padding: 2rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .menu-card {
-            background-color: #202020;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .menu-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .menu-content {
-            padding: 1rem;
-        }
-
-        .menu-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .price-tag {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .discount {
-            background-color: #0074e4;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-
-        .original-price {
-            color: #999;
-            text-decoration: line-through;
-            font-size: 0.9rem;
-        }
-
-        .current-price {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .buy-button {
-            display: inline-block;
-            background-color: #0074e4;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-            transition: background-color 0.2s;
-        }
-
-        .buy-button:hover {
-            background-color: #0066cc;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 70px; height: 70px; border-radius: 8px;">
-        <input type="text" class="search-bar" placeholder="Search menu...">
-        <svg style="width: 20px; height: 20px; border-radius: 8px; color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>        <nav>
-            <ul class="nav-links">
-                <li><a href="home.jsp">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="menu.jsp">Menu</a></li>
-                <li><a href="book.jsp">Book</a></li>
-                <li><a href="orderhis.jsp">Order-History</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="featured">
-        <div class="section-title">
-            <h2>Featured Menu Items</h2>
-            <div style="display: flex; gap: 1rem;">
-                <button style="background: #333; border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer;">←</button>
-                <button style="background: #333; border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer;">→</button>
-            </div>
-        </div>
-       
-            
-        <div class="menu-grid">
-            <div class="menu-card">
-                <img src="images/sp24.jpg" alt="Bruschetta" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">MARVEL SPIDER-MAN 2</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-15%</span> -->
-                        <!-- <span class="original-price">$13.00</span> -->
-                        <span class="current-price">$11.00</span>
-                    </div>
-                    <a href="item.jsp?name=MARVEL SPIDER-MAN 2" class="buy-button">Order Now</a>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/re41.jpg" alt="Resident Evil 4 REMAKE" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">Resident Evil 4 REMAKE</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-20%</span> -->
-                        <!-- <span class="original-price">$15.00</span> -->
-                        <span class="current-price">$12.00</span>
-                    </div>
-                    <a href="item.jsp?name=Resident Evil 4 REMAKE" class="buy-button">Order Now</a>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/elden.jpg" alt="Grilled Fish" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">ELDEN RING</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-25%</span> -->
-                        <!-- <span class="original-price">$12.00</span> -->
-                        <span class="current-price">$9.00</span>
-                    </div>
-                    <a href="item.jsp?name=ELDEN RING" class="buy-button">Order Now</a>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="images/god.jpg" alt="Lemon Dessert" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">GOD OF WAR</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-30%</span> -->
-                        <!-- <span class="original-price">$10.00</span> -->
-                        <span class="current-price">$7.00</span>
-                    </div>
-                    <a href="item.jsp?name=GOD OF WAR" class="buy-button">Order Now</a>
-                </div>
-            </div>
-            <div class="menu-card">
-                <img src="images/20771.jpg" alt="Lemon Dessert" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">GOD OF WAR</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-30%</span> -->
-                        <!-- <span class="original-price">$10.00</span> -->
-                        <span class="current-price">$7.00</span>
-                    </div>
-                    <a href="item.jsp?name=CYBERPUNK 2077" class="buy-button">Order Now</a>
-                </div>
-            </div>
-            <div class="menu-card">
-                <img src="images/god.jpg" alt="Lemon Dessert" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">GOD OF WAR</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-30%</span> -->
-                        <!-- <span class="original-price">$10.00</span> -->
-                        <span class="current-price">$7.00</span>
-                    </div>
-                    <a href="item.jsp?name=GOD OF WAR" class="buy-button">Order Now</a>
-                </div>
-            </div>
-            <div class="menu-card">
-                <img src="images/god.jpg" alt="Lemon Dessert" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">GOD OF WAR</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-30%</span> -->
-                        <!-- <span class="original-price">$10.00</span> -->
-                        <span class="current-price">$7.00</span>
-                    </div>
-                    <a href="item.jsp?name=GOD OF WAR" class="buy-button">Order Now</a>
-                </div>
-            </div>
-            <div class="menu-card">
-                <img src="images/god.jpg" alt="Lemon Dessert" class="menu-image">
-                <div class="menu-content">
-                    <h3 class="menu-title">GOD OF WAR</h3>
-                    <div class="price-tag">
-                        <!-- <span class="discount">-30%</span> -->
-                        <!-- <span class="original-price">$10.00</span> -->
-                        <span class="current-price">$7.00</span>
-                    </div>
-                    <a href="item.jsp?name=GOD OF WAR" class="buy-button">Order Now</a>
-                </div>
-            </div>
-        </div>
-  
-    </main>
-</body>
-</html>
+    @keyframes textGlow {
+        0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff; }
+        50% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff; }
+        100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff; }
+    }
+    
+    html {
+        background-color: #000000;
+    }
+    
+    body {
+        background-color: #000000;
+        color: white; 
+        margin: 0; 
+        padding: 0; 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .gamedet {
+        display: flex;
+        gap: 30px;
+        border-radius: 15px;
+        margin: 50px auto;
+        max-width: 1200px;
+        background: linear-gradient(145deg, #1a1a1a, #202020);
+        color: white;
+        padding: 30px;
+        justify-content: center;
+        align-items: start;
+        text-align: center;
+        box-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+        animation: neonPulse 2s infinite;
+        backdrop-filter: blur(10px);
+    }
+    
+    .description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px;
+        background: rgba(32, 32, 32, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+    
+    .description p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        animation: textGlow 3s infinite;
+    }
+    
+    .header {
+        background: linear-gradient(180deg, #202020, #151515);
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+    
+    .nav-links a:hover {
+        background: rgba(0, 255, 255, 0.1);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    
+    .btnn {
+        display: inline-block;
+        background: linear-gradient(45deg, #0074e4, #00c6ff);
+        color: white;
+        text-decoration: none;
+        padding: 0.75rem 2rem;
+        border-radius: 10px;
+        border: none;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    }
+    
+    .btnn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(0, 198, 255, 0.8);
+    }
+    
+    .pht img {
+        width: 300px;
+        height: 400px;
+        border-radius: 20px;
+        border: 5px solid #202020;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+    
+    .pht img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    }
+    
+    .ytlink {
+        background: rgba(32, 32, 32, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+    
+    .ytlink p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: textGlow 3s infinite;
+    }
+    
+    .ytlink iframe {
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        transition: all 0.3s ease;
+    }
+    
+    .ytlink iframe:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    }

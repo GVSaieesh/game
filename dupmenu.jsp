@@ -80,6 +80,8 @@
             transition: transform 0.2s;
             width: 23%;
             margin-bottom:15px;
+            box-shadow: 0 0 1px #0ff, 0 0 30px rgba(255, 0, 0, 0.3);
+
         }
 
         .menu-card:hover {
@@ -130,22 +132,24 @@
         .checked{
             color:orange;
         }
+        
     </style>
 </head>
 <body>
 <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background-color: #121212;" class="header">
     <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 80px; height: 80px; border-radius: 8px;">
+        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 80px; height: 80px; border-radius: 8px; box-shadow: 0 0 1px #0ff, 0 0 30px rgba(255, 0, 0, 0.3);
+">
         <img src="images/red.png" alt="Red Mask Games" style="width: 180px; height: 80px; border-radius: 8px;">
-        <input type="text" id="search" class="search-bar" placeholder="Search menu..." style="margin-left: 20px;">
+        <input type="text" id="search" class="search-bar" placeholder="Search menu..." style="margin-left: 20px;box-shadow: 0 0 1px #0ff, 0 0 30px rgba(255, 0, 0, 0.3);">
     </div>
 
     <nav>
         <ul class="nav-links" style="display: flex; align-items: center; gap: 40px; list-style: none; margin-right: 20px;">
-            <li><a href="about.jsp">About</a></li>
-            <li><a href="dupmenu.jsp">Menu</a></li>
-            <li><a href="orderhis.jsp">Order-History</a></li>
-            <li><a style="border: 1px solid #0074e4; padding: 10px 20px; background-color: #0074e4; color: white; border-radius: 10px;" href="login.html">Log Out</a></li>
+            <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="about.html">About</a></li>
+            <%-- <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="dupmenu.jsp">Menu</a></li> --%>
+            <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="orderhis.jsp">Order-History</a></li>
+            <li><a style="border: 1px solid #0074e4; padding: 10px 20px; background-color: #0074e4; color: white; border-radius: 10px;box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="login.html">Log Out</a></li>
         </ul>
     </nav>
 </header>
@@ -182,9 +186,9 @@
                 <div class="menu-card">
                     <img src="<%= gimage %>" alt="<%= gname %>" class="menu-image">
                     <div class="menu-content">
-                        <h3 class="menu-title"><%= gname %></h3>
+                        <h3 style="text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);" class="menu-title"><%= gname %></h3>
                         <div class="price-tag">
-                            <span class="current-price">$<%= gprice %></span>
+                            <span class="current-price">₹<%= gprice %></span>
                         </div>
                         <%
                           PreparedStatement pst = con.prepareStatement("SELECT name FROM orders WHERE email=?");
@@ -213,7 +217,7 @@
                     while(rcount!=0){
                         if(grating!=0){
                     %>
-                         <span class="fa fa-star checked"></span>
+                         <span style="text-shadow: 0 0 5px rgba(255, 162, 0, 0.5);" class="fa fa-star checked"></span>
                         <%
                         grating--;
                         }

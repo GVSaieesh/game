@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Little Lemon</title>
+    <style>
+       
+
+        html {
+            background-color: #000000;
+        }
+
+        body {
+            background-color: #000000;
+            color: white; 
+            margin: 0; 
+            padding: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(180deg, #202020, #151515);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url('images/dd.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            box-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            /* background: rgba(32, 32, 32, 0.8); */
+            border-radius: 15px;
+            box-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+
+            
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            
+        }
+
+        .about-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            
+        }
+
+        .about-card {
+            background: linear-gradient(145deg, #1a1a1a, #202020);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #0ff;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0ff;
+        }
+      
+
+     
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 65px; height: 70px; border-radius: 8px;">
+        <nav>
+            <ul class="nav-links">
+                <!-- <li><a href="about.html">About</a></li> -->
+                <li><a href="dupmenu.jsp">Menu</a></li>
+                <li><a href="order-history.html">Order History</a></li>
+                <li><a href="login.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About RED MASK GAMES</h1>
+            "This project is developed as a case study, utilizing JSP and Servlets for backend functionality. The frontend is designed with HTML, CSS, and JavaScript to ensure a seamless and interactive user experience."        </div>
+    </section>
+
+</body>
+</html>
