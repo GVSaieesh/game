@@ -207,7 +207,6 @@
                             <%= alreadyBought ? "Already bought" : "Order Now" %>
                          </a>
                          <div>
-<<<<<<< HEAD
                     <label>rating:</label> <br>
                     <%
                     int rcount = 5;
@@ -232,26 +231,6 @@
                         
                         
                         
-=======
-                    <!-- int countr=5;
-                    int rating = 0;
-                    while(count>0)
-                    {
-                        if(rating==rs.getInt(rating))
-                        {
-                        <span class="fa fa-star checked"></span>
-                        <!-- <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span> -->
-                         rating++;
-                        }
-                        else
-                        {
-                        <span class="fa fa-star"></span>
-                        <!-- <span class="fa fa-star"></span> -->
-                        }
-                        count--;
-                    } -->
->>>>>>> 1a7bcf6e7875953523cf3181faf5c6f585ae2381
                          </div>
                         </div>
                     </div>
