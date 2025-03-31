@@ -171,6 +171,7 @@
                         String gname = rs.getString("name");
                         String gimage = rs.getString("image1");
                         int gprice = rs.getInt("price");
+                        int grating = rs.getInt("rating");
 
                         if (count % 4 == 0 && count != 0) { 
             %>
@@ -206,11 +207,30 @@
                             <%= alreadyBought ? "Already bought" : "Order Now" %>
                          </a>
                          <div>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
+                    <label>rating:</label> <br>
+                    <%
+                    int rcount = 5;
+                    while(rcount!=0){
+                        if(grating!=0){
+                    %>
+                         <span class="fa fa-star checked"></span>
+                        <%
+                        grating--;
+                        }
+                        else{
+                        %>
                         <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        <%
+                        } 
+                        rcount--;
+                    }
+                    %>
+
+                   
+                       
+                        
+                        
+                        
                          </div>
                         </div>
                     </div>
