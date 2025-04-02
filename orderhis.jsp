@@ -8,142 +8,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Lemon - Menu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+    html, body {
+        background-color: #000000;
+        color: white;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 
-        body {
-            background-color: #121212;
-            color: white;
-        }
+    .header {
+        background: linear-gradient(180deg, #202020, #151515);
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
 
-        .header {
-            background-color: #202020;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-        .search-bar {
-            background-color: #2a2a2a;
-            border: none;
-            padding: 0.75rem 1rem;
-            color: white;
-            border-radius: 4px;
-            width: 300px;
-        }
+    .nav-links a {
+        color: #00ffff;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+    .nav-links a:hover {
+        background: rgba(0, 255, 255, 0.1);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
 
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px cyan;
+        animation: neonPulse 2s infinite alternate;
+        
+    }
 
-        .featured {
-            padding: 2rem;
-        }
+    
+    .order-box {
+        background: linear-gradient(145deg, #1a1a1a, #202020);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 450px; 
+        margin: 1rem auto;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: cyan;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        justify-content: flex-start;
+        
+    }
 
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            
-            justify-content: space-between;
-        }
+    
+    .order-box img {
+        width: 80px;  
+        height: 80px;
+        border-radius: 10px;
+        object-fit: cover; 
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+    .order-box label {
+        flex-grow: 1;
+        text-align: left;
+    }
 
-        .menu-card {
-            background-color: #202020;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
+    .game-card {
+        background: linear-gradient(145deg, #1a1a1a, #202020);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 5px cyan, 0 0 10px cyan;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 400px;
+        margin-bottom: 1rem;
+    }
 
-        .menu-card:hover {
-            transform: translateY(-4px);
-        }
+    .game-card img {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
 
-        .menu-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+    .game-card label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: cyan;
+    }
 
-        .menu-content {
-            padding: 1rem;
-        }
+    .search-bar {
+        background-color: #2a2a2a;
+        border: 2px solid cyan;
+        padding: 0.75rem 1rem;
+        color: white;
+        border-radius: 8px;
+        width: 300px;
+        text-shadow: 0 0 10px cyan;
+    }
+</style>
 
-        .menu-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .price-tag {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .discount {
-            background-color: #0074e4;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-
-        .original-price {
-            color: #999;
-            text-decoration: line-through;
-            font-size: 0.9rem;
-        }
-
-        .current-price {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .buy-button {
-            display: inline-block;
-            background-color: #0074e4;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-            transition: background-color 0.2s;
-        }
-
-        .buy-button:hover {
-            background-color: #0066cc;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
         <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 70px; height: 70px; border-radius: 8px;">
-        <input type="text" class="search-bar" placeholder="Search menu...">
+        <%-- <input type="text" class="search-bar" placeholder="Search menu..."> --%>
         <nav>
             <ul class="nav-links">
-                <li><a href="home.jsp">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
+                <%-- <li><a href="home.jsp">Home</a></li> --%>
+                <%-- <li><a href="about.jsp">About</a></li> --%>
+                <%-- <li><a href="dupmenu.jsp">Menu</a></li> --%>
+                <%-- <li><a href="book.jsp">Book</a></li> --%>
                 <li><a href="dupmenu.jsp">Menu</a></li>
-                <li><a href="book.jsp">Book</a></li>
-                <li><a href="orderhis.jsp">Order-History</a></li>
+                <li><a href="login.html">Log Out</a></li>
             </ul>
         </nav>
     </header>
@@ -165,11 +173,11 @@
                       while(rs.next()){
         %>             
                        <div class="section-title">
-                         <div>
-                           <img src="<%=rs.getString("image")%>" alt="<%=rs.getString("name")%>" style="width: 70px; height: 70px; border-radius: 8px;" />
-                           <label><%=rs.getString("name")%></label>
-                           <label>:-Order recived </label>
-                         </div>
+                         <div class="order-box">
+                            <img src="<%=rs.getString("image")%>" alt="<%=rs.getString("name")%>">
+                            <label><%=rs.getString("name")%> : Order received</label>
+                        </div>
+
                        </div>
                         
                 <%

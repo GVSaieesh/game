@@ -151,7 +151,7 @@ body {
                          </div>
                          <div class="ytlink">
                             <p style="font-weight: bold;">TRAILER:</p>
-                            <iframe style="border-radius:10px;" width="560" height="315" src="https://www.youtube.com/embed/<%= rs.getString("ytlink") %>" frameborder="0" allowfullscreen> </iframe>
+                            <iframe style="border-radius:10px;" width="500" height="315" src="https://www.youtube.com/embed/<%= rs.getString("ytlink") %>" frameborder="0" allowfullscreen> </iframe>
                           </div>
                          <div class="description">
                             <p style="font-weight: bold;">Game Description:</p>

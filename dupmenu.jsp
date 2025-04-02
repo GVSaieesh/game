@@ -146,10 +146,10 @@
 
     <nav>
         <ul class="nav-links" style="display: flex; align-items: center; gap: 40px; list-style: none; margin-right: 20px;">
-            <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="about.html">About</a></li>
+            <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);color: #00ffff;" href="about.html">About</a></li>
             <%-- <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="dupmenu.jsp">Menu</a></li> --%>
-            <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="orderhis.jsp">Order-History</a></li>
-            <li><a style="border: 1px solid #0074e4; padding: 10px 20px; background-color: #0074e4; color: white; border-radius: 10px;box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="login.html">Log Out</a></li>
+            <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);color: #00ffff;" href="orderhis.jsp">Order-History</a></li>
+            <li><a style="border: 1px solid #0074e4; padding: 10px 20px; background-color: #0074e4; color: #00ffff;color: white; border-radius: 10px;box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="login.html">Log Out</a></li>
         </ul>
     </nav>
 </header>
