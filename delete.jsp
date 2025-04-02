@@ -24,11 +24,11 @@ String url = "jdbc:mysql://localhost:3306/littlelemon";
 
         if(rs>0)
         {
-            out.println("<script>alert('sucessfully deleted'); window.location.href='index.html';</script>");
+            out.println("<script>alert('sucessfully deleted'); window.location.href='admin.html';</script>");
 
         }
         else{
-            out.println("<script>alert('failed !try again'); window.location.href='admindel.html';</script>");
+            out.println("<script>alert('failed !try again'); window.location.href='delete.html';</script>");
         }
     ps.close();
     con.close();

@@ -36,7 +36,7 @@ String url = "jdbc:mysql://localhost:3306/littlelemon";
         }
         else
         {
-            out.println("<script>alert('failed ! try again'); window.location.href='admin.html';</script>");
+            out.println("<script>alert('failed ! try again'); window.location.href='add.html';</script>");
         }
      ps.close();
      con.close();
