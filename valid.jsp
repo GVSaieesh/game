@@ -4,7 +4,7 @@
 <%
   String email1 = request.getParameter("email");
   String password1 = request.getParameter("password");
-
+  String admin = "littlelemonmf@gmail.com";
   String url = "jdbc:mysql://localhost:3306/littlelemon";
           String user = "root";
           String password ="";
@@ -21,10 +21,15 @@
             if(rs.next())
             {
               String Stpassword=rs.getString("password");
-              if(password1.equals(Stpassword))
+              if(password1.equals(Stpassword) && email1.equals(admin))
               {
-                  session.setAttribute("uemail", email1);
-                  response.sendRedirect("dupmenu.jsp");
+                 
+                  response.sendRedirect("admin.html");
+              }
+              else if(password1.equals(Stpassword))
+              {
+                 session.setAttribute("uemail", email1);
+                response.sendRedirect("dupmenu.jsp");
               }
               else
               {
