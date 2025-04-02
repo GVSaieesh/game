@@ -6,8 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .form1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Ensure text aligns to the left */
+    padding: 20px;
+    /* border: 1px solid rgba(0, 255, 255, 0.3); */
+    border-radius:10px;
+    box-shadow: 0 0 1px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+
+}
+html {
+    background-color: #000000;
+}
+body {
+    background-color: #000000;
+    color: white; 
+    margin: 0; 
+    padding: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.sub {
+    display: inline-block;
+    background-color: #0074e4;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #0074e4;
+    /* margin-top: 1rem; */
+    transition: background-color 0.2s;
+    align-self: flex-start;
+    font-size: 1.2rem; 
+    font-weight: bold; 
+}
+input {
+    width: 400px;
+    padding: 10px;
+    margin: 3px 0;
+    border-radius: 10px ;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    border: 2px solid #00ffff;
+    transition: 0.3s;
+    box-shadow: 0 0 1px #0ff, 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.formp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+</style>
 <body>
-<form action="admin.jsp" method ="post">
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background-color: #121212;" class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="images/Logo.png" alt="Little Lemon Logo" style="width: 80px; height: 80px; border-radius: 8px; box-shadow: 0 0 1px #0ff, 0 0 30px rgba(255, 0, 0, 0.3);">
+            <img src="images/red.png" alt="Red Mask Games" style="width: 180px; height: 80px; border-radius: 8px;">
+            <!-- <h6 style="font-size: 20px;">Admin Panel</h6> -->
+        </div>
+    
+        <nav>
+            <ul class="nav-links" style="display: flex; align-items: center; gap: 40px; list-style: none; margin-right: 20px;">
+                <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="about.html">About</a></li>
+                <li><a style="font-weight: bold;text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="orderhis.jsp">Order-History</a></li>
+                <li><a style="border: 1px solid #0074e4; padding: 10px 20px; background-color: #0074e4; color: white; border-radius: 10px;box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);" href="login.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="formp">
+
+<form action="admin.jsp" method ="post" class="form1">
+    <h6 style="">Admin Panel</h6>
     <label>Upload a  image</label>
     <input type="file" name="img" required><br><br>
     <label>Upload a game</label>
@@ -27,10 +103,10 @@
     <input type="number" name="rating" required><br><br>
 
     <label>Provide the trailer link</label>
-    <input type="number" name="link" required><br><br>
+    <input type="text" name="link" required><br><br>
 
-    <button type="submit">submit</button>
+    <button class="sub" type="submit">submit</button>
 </form>
-
+</div>
 </body>
 </html>
